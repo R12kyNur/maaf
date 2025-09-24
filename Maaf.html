@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maaf Sayangku</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://flmngr.firstmedia.com/files/images/article/2022/10/Kalimat-Romantis-untuk-Rayakan-I-Love-You-Day.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Overlay gelap untuk readability */
+            z-index: 1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 80%;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .maaf-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-yes:hover {
+            background-color: #45a049;
+        }
+
+        .btn-no {
+            background-color: #f44336;
+            color: white;
+            pointer-events: none; /* Membuat tombol tidak bisa diklik */
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .whatsapp-btn {
+            display: none;
+            background-color: #25D366;
+            color: white;
+            font-size: 1.2em;
+            padding: 20px 40px;
+            margin-top: 20px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Responsive untuk mobile (Android) dan desktop */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .maaf-text {
+                font-size: 1em;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button {
+                width: 200px;
+            }
+        }
+
+        /* Sembunyikan iframe audio di desktop jika perlu, tapi tetap autoplay */
+        .audio-player {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio backsound dari YouTube (autoplay, loop, hidden) -->
+    <!-- Catatan: Autoplay mungkin diblokir di beberapa browser; user perlu interaksi pertama -->
+    <iframe class="audio-player" src="https://www.youtube.com/embed/y5xi7ZJfVMU?autoplay=1&loop=1&playlist=y5xi7ZJfVMU&mute=0" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="container">
+        <h1>Maafkan Aku, Sayangku ❤️</h1>
+        <div class="maaf-text">
+            <p>Sayang, aku tahu aku telah membuatmu sedih. Maafkan aku atas semua kesalahanku. Aku tidak pernah bermaksud menyakitimu.</p>
+            <p>Kamu adalah segalanya bagiku. Aku akan menjadi lebih baik lagi. Tolong maafkan aku, ya sayangku cinta🫶❤️? Aku sayang & cinta kamu selamanya.</p>
+            <p>Kamu mau maafin aku nggak? 😘</p>
+        </div>
+
+        <div class="buttons">
+            <button class="btn-yes" onclick="handleYes()">Ya, Aku Maafin Kamu 💕</button>
+            <button class="btn-no">Tidak 😔</button>
+        </div>
+
+        <button class="whatsapp-btn" id="whatsappBtn" onclick="openWhatsApp()">
+            Chat di WhatsApp 📱
+        </button>
+    </div>
+
+    <script>
+        function handleYes() {
+            // Sembunyikan tombol Ya dan Tidak setelah klik
+            document.querySelector('.buttons').style.display = 'none';
+            
+            // Tampilkan pesan konfirmasi singkat
+            const container = document.querySelector('.container');
+            const thanks = document.createElement('p');
+            thanks.innerHTML = 'Terima kasih, sayang! Aku bahagia sekali! 😍';
+            thanks.style.fontSize = '1.5em';
+            thanks.style.marginTop = '20px';
+            container.appendChild(thanks);
+
+            // Jeda 5 detik sebelum munculkan tombol WhatsApp
+            setTimeout(() => {
+                document.getElementById('whatsappBtn').style.display = 'block';
+                thanks.innerHTML += '<br>Sekarang, yuk chat yuk! 💬';
+            }, 5000);
+        }
+
+        function openWhatsApp() {
+            // Ganti 'NOMOR_HP' dengan nomor WhatsApp pacar (contoh: 6281234567890)
+            // Format: wa.me/NOMOR?text=PESAN
+            const phoneNumber = '+6288228306716'; // Ubah ini!
+            const message = encodeURIComponent('Halo sayang, Iya aku maafin kamu! Aku sayang kamu! Love You ❤️');
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+
+        // Mulai autoplay audio setelah user interact (untuk compliance browser)
+        document.addEventListener('click', function() {
+            const iframe = document.querySelector('.audio-player');
+            if (iframe.src.indexOf('autoplay=0') > -1) {
+                iframe.src = iframe.src.replace('autoplay=0', 'autoplay=1');
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
